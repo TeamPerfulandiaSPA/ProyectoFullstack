@@ -1,0 +1,4 @@
+[
+  { "id": 1, "nombre": "Perfume La Vie Est Belle EDP 100 ml Lancôme", "marca": "Lancôme", "precio": 84990, "precioOriginal": 99990, "imagen": "/img/producto1.png", "enOferta": true },
+  { "id": 4, "nombre": "Cloud Eau de Parfum 100 ml – Ariana Grande", "marca": "Ariana Grande", "precio": 59000, "precioOriginal": 69000, "imagen": "/img/producto4.webp", "enOferta": true }
+]
