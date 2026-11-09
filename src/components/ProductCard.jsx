@@ -8,7 +8,7 @@ export function ProductCard({ id, nombre, marca, precio, precioOriginal, imagen,
     : 0;
 
   return (
-    <article className="tarjeta">
+    <article className="tarjeta h-100 d-flex flex-column">
       <img src={imagen} alt={nombre} />
       <h3>{nombre}</h3>
       <p>Marca: {marca}</p>
@@ -23,7 +23,7 @@ export function ProductCard({ id, nombre, marca, precio, precioOriginal, imagen,
           En oferta{descuento > 0 && <> · -{descuento}%</>}
         </span>
       )}
-      <div>
+      <div className="mt-auto">
         <AddToCartButton producto={{ id, nombre, marca, precio, imagen }} />
       </div>
     </article>

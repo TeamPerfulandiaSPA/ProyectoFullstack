@@ -7,7 +7,6 @@ describe('ProductosDestacados Component', () => {
   });
 
   test('muestra el mensaje "Cargando productos..." inicialmente', () => {
-    // fetch que nunca responde: el componente se queda en estado "cargando"
     jest.spyOn(global, 'fetch').mockImplementation(() => new Promise(() => {}));
 
     render(<ProductosDestacados />);
@@ -27,22 +26,18 @@ describe('ProductosDestacados Component', () => {
       },
     ];
 
-    // 1. Mockear fetch: respuesta ok y json() devuelve mockData
     jest.spyOn(global, 'fetch').mockResolvedValue({
       ok: true,
       json: async () => mockData,
     });
 
-    // 2. Renderizar
     render(<ProductosDestacados />);
 
-    // 3. findByText espera (asíncrono) a que aparezca el producto
     expect(await screen.findByText('Dior Paradise 100ml')).toBeInTheDocument();
     expect(global.fetch).toHaveBeenCalledWith(API_DESTACADOS);
   });
 
   test('muestra mensaje de error cuando falla la llamada a la API', async () => {
-    // Simular una respuesta HTTP con error (ok: false)
     jest.spyOn(global, 'fetch').mockResolvedValue({ ok: false });
 
     render(<ProductosDestacados />);

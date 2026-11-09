@@ -8,10 +8,8 @@ describe('ContactForm Component', () => {
     render(<ContactForm onSubmit={jest.fn()} />);
     const boton = screen.getByRole('button', { name: 'Enviar mensaje' });
 
-    // Al inicio (0 caracteres) está deshabilitado
     expect(boton).toBeDisabled();
 
-    // Con 9 caracteres ("Muy corto") sigue deshabilitado: es el límite justo
     await user.type(screen.getByLabelText('Mensaje *'), 'Muy corto');
     expect(boton).toBeDisabled();
   });
@@ -41,8 +39,7 @@ describe('ContactForm Component', () => {
   test('ejecuta onSubmit 1 vez con los datos correctos al enviar', async () => {
     const user = userEvent.setup();
 
-    // Función simulada: registra cuántas veces se llamó y con qué argumentos
-    const handleSubmit = jest.fn();
+     const handleSubmit = jest.fn();
     render(<ContactForm onSubmit={handleSubmit} />);
 
     await user.type(screen.getByLabelText('Nombre completo *'), 'Angy Caiozzi');

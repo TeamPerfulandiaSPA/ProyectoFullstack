@@ -11,17 +11,17 @@ import { CartProvider } from './context/CartContext';
 function App() {
   return (
     <CartProvider>
-    <BrowserRouter>
-      <Header />
-      <MenuPrincipal />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/productos" element={<Productos />} />
-        <Route path="/contacto" element={<Contacto />} />
-        <Route path="/carrito" element={<Carrito />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <Header />
+        <MenuPrincipal />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/productos" element={<Productos />} />
+          <Route path="/contacto" element={<Contacto />} />
+          <Route path="/carrito" element={<Carrito />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </CartProvider>
   );
 }

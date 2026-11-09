@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 
-// Con <CartProvider> suma/quita el producto del carro real.
-// Sin provider (tests unitarios) funciona con un estado local.
 export function AddToCartButton({ producto }) {
   const cart = useCart();
   const [enCarroLocal, setEnCarroLocal] = useState(false);

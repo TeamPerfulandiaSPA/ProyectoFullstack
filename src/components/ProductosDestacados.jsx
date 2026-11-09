@@ -28,9 +28,11 @@ export function ProductosDestacados() {
   if (error) return <p className="estado-api">{error}</p>;
 
   return (
-    <div className="grid-productos">
+    <div className="row g-4">
       {productos.map((p) => (
-        <ProductCard key={p.id} {...p} />
+        <div key={p.id} className="col-12 col-sm-6 col-lg-4">
+          <ProductCard {...p} />
+        </div>
       ))}
     </div>
   );

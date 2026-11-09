@@ -1,7 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
-// Si un componente se usa sin <CartProvider> (por ejemplo en los tests),
-// el contexto vale null y el componente se las arregla solo.
 export const CartContext = createContext(null);
 export const useCart = () => useContext(CartContext);
 

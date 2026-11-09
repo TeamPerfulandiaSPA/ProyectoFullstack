@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:ci": "react-scripts test --watchAll=false --verbose",
-    "test:coverage": "react-scripts test --watchAll=false --coverage --collectCoverageFrom=src/components/**/*.jsx"
+    "test:coverage": "react-scripts test --watchAll=false --coverage"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +41,11 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/{components,context,pages,utils}/**/*.{js,jsx}"
     ]
   }
 }

@@ -16,7 +16,7 @@ export default function Carrito() {
     return (
       <main className="carrito">
         <h2>¡Gracias por tu compra! ♡</h2>
-        <p className="carrito-vacio">Tu pedido fue registrado (simulación).</p>
+        <p className="carrito-vacio">Tu pedido fue registrado (～￣▽￣)～</p>
         <p className="carrito-vacio"><Link to="/productos">Seguir mirando perfumes</Link></p>
       </main>
     );
@@ -56,9 +56,9 @@ export default function Carrito() {
         ))}
       </ul>
 
-      <div className="carrito-resumen">
+      <div className="carrito-resumen d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3">
         <p>Total: <strong>${formatearPrecio(totalPrecio)}</strong></p>
-        <div>
+        <div className="d-flex flex-wrap justify-content-center gap-2">
           <button type="button" className="btn-secundario" onClick={vaciar}>Vaciar carrito</button>
           <button type="button" onClick={finalizar}>Finalizar compra</button>
         </div>

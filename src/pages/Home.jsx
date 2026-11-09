@@ -6,9 +6,10 @@ export default function Home() {
       <section className="cuerpo">
         <h2>Muestra Esencia</h2>
         <img
+          className="img-fluid"
           src="/img/imagen_index.jpg"
           alt="Muestra Esencia"
-          style={{ display: 'block', margin: '0 auto', width: 350, height: 200, objectFit: 'cover' }}
+          style={{ display: 'block', margin: '0 auto', width: 350, maxWidth: '100%', height: 200, objectFit: 'cover' }}
         />
         <blockquote>
           "Un perfume no es solo un aroma; es un recuerdo invisible que perdura en el tiempo y cuenta tu historia sin palabras"

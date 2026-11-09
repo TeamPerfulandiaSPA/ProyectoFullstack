@@ -15,7 +15,6 @@ describe('AddToCartButton Component', () => {
     const user = userEvent.setup();
     render(<AddToCartButton />);
 
-    // Simular el clic del usuario (es asíncrono, por eso await)
     await user.click(screen.getByRole('button'));
 
     expect(
@@ -28,8 +27,8 @@ describe('AddToCartButton Component', () => {
     render(<AddToCartButton />);
     const boton = screen.getByRole('button');
 
-    await user.click(boton); // pasa a "✓ En el carro"
-    await user.click(boton); // vuelve al estado inicial
+    await user.click(boton); 
+    await user.click(boton); 
 
     expect(
       screen.getByRole('button', { name: '+ Agregar al carro' })
